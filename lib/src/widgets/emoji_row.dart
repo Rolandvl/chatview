@@ -24,7 +24,6 @@ import 'package:flutter/material.dart';
 import 'package:chatview/src/utils/constants/constants.dart';
 
 import '../values/typedefs.dart';
-import 'emoji_picker_widget.dart';
 
 class EmojiRow extends StatelessWidget {
   EmojiRow({
@@ -68,27 +67,27 @@ class EmojiRow extends StatelessWidget {
             ),
           ),
         ),
-        IconButton(
-          constraints: const BoxConstraints(),
-          icon: Icon(
-            Icons.add,
-            color: Colors.grey.shade600,
-            size: size ?? 28,
-          ),
-          onPressed: () => _showBottomSheet(context),
-        ),
+        // IconButton(
+        //   constraints: const BoxConstraints(),
+        //   icon: Icon(
+        //     Icons.add,
+        //     color: Colors.grey.shade600,
+        //     size: size ?? 28,
+        //   ),
+        //   onPressed: () => _showBottomSheet(context),
+        // ),
       ],
     );
   }
 
-  void _showBottomSheet(BuildContext context) => showModalBottomSheet<void>(
-        context: context,
-        builder: (newContext) => EmojiPickerWidget(
-          emojiPickerSheetConfig: context.chatListConfig.emojiPickerSheetConfig,
-          onSelected: (emoji) {
-            Navigator.pop(newContext);
-            onEmojiTap(emoji);
-          },
-        ),
-      );
+  // void _showBottomSheet(BuildContext context) => showModalBottomSheet<void>(
+  //       context: context,
+  //       builder: (newContext) => EmojiPickerWidget(
+  //         emojiPickerSheetConfig: context.chatListConfig.emojiPickerSheetConfig,
+  //         onSelected: (emoji) {
+  //           Navigator.pop(newContext);
+  //           onEmojiTap(emoji);
+  //         },
+  //       ),
+  //     );
 }

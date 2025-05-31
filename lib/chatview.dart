@@ -29,12 +29,9 @@ export 'src/values/enumeration.dart';
 export 'src/values/typedefs.dart';
 export 'package:chatview_utils/chatview_utils.dart';
 export 'package:audio_waveforms/audio_waveforms.dart'
-    show
-        WaveStyle,
-        PlayerWaveStyle,
-        AndroidEncoder,
-        IosEncoder,
-        AndroidOutputFormat;
+    show WaveStyle, PlayerWaveStyle, AndroidEncoder, IosEncoder, AndroidOutputFormat;
 export 'src/models/config_models/receipts_widget_config.dart';
 export 'src/extensions/extensions.dart' show MessageTypes;
 export 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
+export 'src/utils/timeago/timeago.dart' show setDefaultLocale, setLocaleMessages;
+export 'src/utils/package_strings.dart' show setPackageStrings;

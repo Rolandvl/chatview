@@ -15,6 +15,7 @@ class VoiceMessageConfiguration {
     this.waveformMargin,
     this.waveformPadding,
     this.enableSeekGesture = true,
+    this.voiceUrl,
   });
 
   /// Applies style to waveform.
@@ -49,4 +50,6 @@ class VoiceMessageConfiguration {
 
   /// Enable/disable seeking with gestures. Enabled by default.
   final bool enableSeekGesture;
+
+  final Future<String?> Function(String)? voiceUrl;
 }
