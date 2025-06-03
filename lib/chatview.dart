@@ -35,3 +35,4 @@ export 'src/extensions/extensions.dart' show MessageTypes;
 export 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 export 'src/utils/timeago/timeago.dart' show setDefaultLocale, setLocaleMessages;
 export 'src/utils/package_strings.dart' show setPackageStrings;
+export 'src/utils/constants/constants.dart' show applicationDateFormatter, lastSeenAgoBuilder;

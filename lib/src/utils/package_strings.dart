@@ -22,7 +22,7 @@
 
 String _default = 'en';
 
-class PackageStringsDef {
+class PackageStringsEn {
   static const String today = "Today";
   static const String yesterday = "Yesterday";
   static const String repliedToYou = "Replied to you";
@@ -37,26 +37,10 @@ class PackageStringsDef {
   static const String send = "Send";
   static const String you = "You";
   static const String report = "Report";
+  static const String seen = "Seen";
 }
 
-class PackageStringsEn implements PackageStringsDef {
-  static const String today = "Today";
-  static const String yesterday = "Yesterday";
-  static const String repliedToYou = "Replied to you";
-  static const String repliedBy = "Replied by";
-  static const String more = "More";
-  static const String unsend = "Unsend";
-  static const String reply = "Reply";
-  static const String replyTo = "Replying to";
-  static const String message = "Message";
-  static const String reactionPopupTitle = "Tap and hold to multiply your reaction";
-  static const String photo = "Photo";
-  static const String send = "Send";
-  static const String you = "You";
-  static const String report = "Report";
-}
-
-class PackageStringsFr implements PackageStringsDef {
+class PackageStringsFr {
   static const String today = "Aujourd'hui";
   static const String yesterday = "Hier";
   static const String repliedToYou = "T'as répondu";
@@ -64,31 +48,33 @@ class PackageStringsFr implements PackageStringsDef {
   static const String more = "Plus";
   static const String unsend = "Non envoyé";
   static const String reply = "Répondre";
-  static const String replyTo = "Réponse de";
+  static const String replyTo = "Répondre à";
   static const String message = "Message";
   static const String reactionPopupTitle = "ajoute des réactions avec un long tap";
   static const String photo = "Photo";
   static const String send = "Envoyer";
   static const String you = "Toi";
   static const String report = "Report";
+  static const String seen = "Vu";
 }
 
-class PackageStrings extends PackageStringsDef {
-  static String today = _default == "en" ? PackageStringsEn.today : PackageStringsFr.today;
-  static String yesterday = _default == "en" ? PackageStringsEn.yesterday : PackageStringsFr.yesterday;
-  static String repliedToYou = _default == "en" ? PackageStringsEn.repliedToYou : PackageStringsFr.repliedToYou;
-  static String repliedBy = _default == "en" ? PackageStringsEn.repliedBy : PackageStringsFr.repliedBy;
-  static String more = _default == "en" ? PackageStringsEn.more : PackageStringsFr.more;
-  static String unsend = _default == "en" ? PackageStringsEn.unsend : PackageStringsFr.unsend;
-  static String reply = _default == "en" ? PackageStringsEn.reply : PackageStringsFr.reply;
-  static String replyTo = _default == "en" ? PackageStringsEn.replyTo : PackageStringsFr.replyTo;
-  static String message = _default == "en" ? PackageStringsEn.message : PackageStringsFr.message;
-  static String reactionPopupTitle =
+class PackageStrings {
+  static String today() => _default == "en" ? PackageStringsEn.today : PackageStringsFr.today;
+  static String yesterday() => _default == "en" ? PackageStringsEn.yesterday : PackageStringsFr.yesterday;
+  static String repliedToYou() => _default == "en" ? PackageStringsEn.repliedToYou : PackageStringsFr.repliedToYou;
+  static String repliedBy() => _default == "en" ? PackageStringsEn.repliedBy : PackageStringsFr.repliedBy;
+  static String more() => _default == "en" ? PackageStringsEn.more : PackageStringsFr.more;
+  static String unsend() => _default == "en" ? PackageStringsEn.unsend : PackageStringsFr.unsend;
+  static String reply() => _default == "en" ? PackageStringsEn.reply : PackageStringsFr.reply;
+  static String replyTo() => _default == "en" ? PackageStringsEn.replyTo : PackageStringsFr.replyTo;
+  static String message() => _default == "en" ? PackageStringsEn.message : PackageStringsFr.message;
+  static String reactionPopupTitle() =>
       _default == "en" ? PackageStringsEn.reactionPopupTitle : PackageStringsFr.reactionPopupTitle;
-  static String photo = _default == "en" ? PackageStringsEn.photo : PackageStringsFr.photo;
+  static String photo() => _default == "en" ? PackageStringsEn.photo : PackageStringsFr.photo;
   static String send = _default == "en" ? PackageStringsEn.send : PackageStringsFr.send;
-  static String you = _default == "en" ? PackageStringsEn.you : PackageStringsFr.you;
-  static String report = _default == "en" ? PackageStringsEn.report : PackageStringsFr.report;
+  static String you() => _default == "en" ? PackageStringsEn.you : PackageStringsFr.you;
+  static String report() => _default == "en" ? PackageStringsEn.report : PackageStringsFr.report;
+  static String seen() => _default == "en" ? PackageStringsEn.seen : PackageStringsFr.seen;
 }
 
 void setPackageStrings(String locale) {

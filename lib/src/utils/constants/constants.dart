@@ -19,6 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+import 'package:chatview/src/utils/package_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -28,8 +29,7 @@ import '../timeago/timeago.dart' as timeago;
 
 const String emojiRegExpression =
     r'(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])';
-const String imageUrlRegExpression =
-    r'(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)';
+const String imageUrlRegExpression = r'(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)';
 const String dateFormat = "yyyy-MM-dd";
 const String jpg = ".jpg";
 const String png = ".png";
@@ -79,7 +79,7 @@ Widget lastSeenAgoBuilder(Message message, String formattedDate) {
   return Padding(
     padding: const EdgeInsets.all(2),
     child: Text(
-      'Seen ${applicationDateFormatter(message.createdAt)}    ',
+      '${PackageStrings.seen()} ${applicationDateFormatter(message.createdAt)}    ',
       style: const TextStyle(color: Colors.grey, fontSize: 12),
     ),
   );

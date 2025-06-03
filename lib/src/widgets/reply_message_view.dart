@@ -66,19 +66,17 @@ class ReplyMessageView extends StatelessWidget {
             Icon(
               Icons.photo,
               size: 20,
-              color:
-                  sendMessageConfig?.replyMessageColor ?? Colors.grey.shade700,
+              color: sendMessageConfig?.replyMessageColor ?? Colors.grey.shade700,
             ),
             Text(
-              PackageStrings.photo,
+              PackageStrings.photo(),
               style: TextStyle(
                 color: sendMessageConfig?.replyMessageColor ?? Colors.black,
               ),
             ),
           ],
         ),
-      MessageType.custom when customMessageReplyViewBuilder != null =>
-        customMessageReplyViewBuilder!(message),
+      MessageType.custom when customMessageReplyViewBuilder != null => customMessageReplyViewBuilder!(message),
       MessageType.custom || MessageType.text => Text(
           message.message,
           maxLines: 1,

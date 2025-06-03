@@ -46,9 +46,9 @@ extension TimeDifference on DateTime {
     final differenceInDays = currentDate.difference(targetDate).inDays;
 
     if (differenceInDays == 0) {
-      return PackageStrings.today;
+      return PackageStrings.today();
     } else if (differenceInDays <= 1 && differenceInDays >= -1) {
-      return PackageStrings.yesterday;
+      return PackageStrings.yesterday();
     } else {
       final DateFormat formatter = DateFormat(chatSeparatorDatePattern);
       return formatter.format(this);
@@ -98,8 +98,7 @@ extension ValidateString on String {
         circleRadius: profileCircleRadius ?? 8,
         assetImageErrorBuilder: user?.assetImageErrorBuilder,
         networkImageErrorBuilder: user?.networkImageErrorBuilder,
-        networkImageProgressIndicatorBuilder:
-            user?.networkImageProgressIndicatorBuilder,
+        networkImageProgressIndicatorBuilder: user?.networkImageProgressIndicatorBuilder,
       ),
     );
   }
@@ -141,12 +140,10 @@ extension ChatViewStateTitleExtension on String? {
 
 /// Extension on State for accessing inherited widget.
 extension StatefulWidgetExtension on State {
-  ChatViewInheritedWidget? get chatViewIW =>
-      context.mounted ? ChatViewInheritedWidget.of(context) : null;
+  ChatViewInheritedWidget? get chatViewIW => context.mounted ? ChatViewInheritedWidget.of(context) : null;
 
-  ReplySuggestionsConfig? get suggestionsConfig => context.mounted
-      ? SuggestionsConfigIW.of(context)?.suggestionsConfig
-      : null;
+  ReplySuggestionsConfig? get suggestionsConfig =>
+      context.mounted ? SuggestionsConfigIW.of(context)?.suggestionsConfig : null;
 
   ConfigurationsInheritedWidget get chatListConfig =>
       context.mounted && ConfigurationsInheritedWidget.of(context) != null
@@ -159,20 +156,16 @@ extension StatefulWidgetExtension on State {
 
 /// Extension on State for accessing inherited widget.
 extension BuildContextExtension on BuildContext {
-  ChatViewInheritedWidget? get chatViewIW =>
-      mounted ? ChatViewInheritedWidget.of(this) : null;
+  ChatViewInheritedWidget? get chatViewIW => mounted ? ChatViewInheritedWidget.of(this) : null;
 
-  ReplySuggestionsConfig? get suggestionsConfig =>
-      mounted ? SuggestionsConfigIW.of(this)?.suggestionsConfig : null;
+  ReplySuggestionsConfig? get suggestionsConfig => mounted ? SuggestionsConfigIW.of(this)?.suggestionsConfig : null;
 
-  ConfigurationsInheritedWidget get chatListConfig =>
-      mounted && ConfigurationsInheritedWidget.of(this) != null
-          ? ConfigurationsInheritedWidget.of(this)!
-          : const ConfigurationsInheritedWidget(
-              chatBackgroundConfig: ChatBackgroundConfiguration(),
-              child: SizedBox.shrink(),
-            );
+  ConfigurationsInheritedWidget get chatListConfig => mounted && ConfigurationsInheritedWidget.of(this) != null
+      ? ConfigurationsInheritedWidget.of(this)!
+      : const ConfigurationsInheritedWidget(
+          chatBackgroundConfig: ChatBackgroundConfiguration(),
+          child: SizedBox.shrink(),
+        );
 
-  ChatBubbleConfiguration? get chatBubbleConfig =>
-      chatListConfig.chatBubbleConfig;
+  ChatBubbleConfiguration? get chatBubbleConfig => chatListConfig.chatBubbleConfig;
 }
